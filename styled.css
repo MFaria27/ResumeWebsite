@@ -46,7 +46,7 @@
     font-size: 1.2em;
     padding-top: 0.9em;
     padding-bottom: 1em;
-    width: 25%;
+    width: 20%;
 }
 
 html {
@@ -73,4 +73,8 @@ hr {
     margin: 2em;
     height: 450px;
     width: 300px;
+}
+
+iframe {
+    margin-left: 10%;
 }

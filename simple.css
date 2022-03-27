@@ -50,6 +50,35 @@ html {
 #profile {
     height: 300px;
     width: 200px;
+    float: left;
+    margin: 10px;
+    margin-right: 50px;
+}
+
+#abouttext {
+    padding: 20px;
+    margin-right: 50px;
+}
+
+#aboutsocials {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
+#aboutsocials img {
+    height: 30px;
+    width: 30px;
+}
+#aboutsocials a{
+    text-decoration: none;
+}
+#aboutsocials a:hover {
+    text-decoration: underline;
+}
+
+#aboutother td{
+    vertical-align: top;
 }
 
 .thumbnail{
@@ -119,4 +148,25 @@ html {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+iframe {
+    margin-left: 10%;
+}
+
+.update h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.update h3{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.update ul {
+    margin-top: 0px;
+}
+
+.update {
+    margin-bottom: 50px;
 }
