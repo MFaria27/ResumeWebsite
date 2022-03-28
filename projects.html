@@ -3,6 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MF: Projects</title>
         <link class="currentStyle" rel="stylesheet" href="simple.css">
         <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
@@ -24,59 +25,65 @@
             </table>
         </div>
         <hr>
-        <div id="projects">
-            <div id="github">
-                <h2>Link to my GitHub: <a href = "https://github.com/MFaria27" target="_blank">MFaria27</a></h2>
-            </div>
-            <div class="project">
-                <img src="projects/SpotifyProjectThumbnail.png" alt="Spotify Visualization" class="thumbnail">
-                <div class="entry">
-                    <h4>March 2022</h4>
-                    <h2>Visualizing Spotify Data</h2>
-                    <h3>Using Python data mining and d3 javascript visualization</h3>
-                    <button class="buttons" id="spotVisModal">Click here to view more</button>
-                </div>
-                <div id="spotVisModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h1 style="text-align: center;">Visualizing Spotify Data with d3</h1>
-                        <p>Some text in the Modal..</p>
-                    </div>
-                </div>
-            </div>
-            <div class="project">
-                <img src="projects/SpotifyAlgorithm.png" alt="Spotify Popularity Algorithm" class="thumbnail">
-                <div class="entry">
-                    <h4>December 2021</h4>
-                    <h2>Predicting Song Popularity</h2>
-                    <h3>Using Spotipy, data mining and cleaning and prediction modeling</h3>
-                    <button class="buttons" id="spotAlgo">Click here to view more</button>
-                </div>
-                <div id="spotAlgo" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h1 style="text-align: center;">Predicting Song Popularty using Spotipy</h1>
-                        <p>Some text in the Modal..</p>
-                    </div>
-                </div>
-            </div>
-            <div class="project">
-                <img src="projects/DuckHuntScreenshot.png" alt="Duck Hunt Web Game" class="thumbnail">
-                <div class="entry">
-                    <h4>July 2020</h4>
-                    <h2>Duck Hunt Web Game</h2>
-                    <h3>Using Javascript, HTML and CSS to recreate the popular retro game Duck Hunt</h3>
-                    <button class="buttons" id="duckHunt">Click here to view more</button>
-                </div>
-                <div id="duckHunt" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h1 style="text-align: center;">Duck Hunt Web Game</h1>
-                        <p>Some text in the Modal..</p>
-                    </div>
-                </div>
-            </div>
+        <div id="github">
+            <h2>Link to my GitHub: <a href = "https://github.com/MFaria27" target="_blank">MFaria27</a></h2>
         </div>
+        <table id="project">
+            <tr>
+                <td><img src="projects/SpotifyProjectThumbnail.png" alt="Spotify Visualization" class="thumbnail"></td>
+                <td>
+                    <div class="entry">
+                        <h4>March 2022</h4>
+                        <h2>Visualizing Spotify Data</h2>
+                        <h3>Using Python data mining and d3 javascript visualization</h3>
+                        <button class="buttons" id="spotVisModal">Click here to view more</button>
+                    </div>
+                    <div id="spotVisModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h1 style="text-align: center;">Visualizing Spotify Data with d3</h1>
+                            <p>Some text in the Modal..</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="projects/SpotifyAlgorithm.png" alt="Spotify Popularity Algorithm" class="thumbnail"></td>
+                <td>
+                    <div class="entry">
+                        <h4>December 2021</h4>
+                        <h2>Predicting Song Popularity</h2>
+                        <h3>Using Spotipy, data mining and cleaning and prediction modeling</h3>
+                        <button class="buttons" id="spotAlgo">Click here to view more</button>
+                    </div>
+                    <div id="spotAlgo" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h1 style="text-align: center;">Predicting Song Popularty using Spotipy</h1>
+                            <p>Some text in the Modal..</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="projects/DuckHuntScreenshot.png" alt="Duck Hunt Web Game" class="thumbnail"></td>
+                <td>
+                    <div class="entry">
+                        <h4>July 2020</h4>
+                        <h2>Duck Hunt Web Game</h2>
+                        <h3>Using Javascript, HTML and CSS to recreate the popular retro game Duck Hunt</h3>
+                        <button class="buttons" id="duckHunt">Click here to view more</button>
+                    </div>
+                    <div id="duckHunt" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h1 style="text-align: center;">Duck Hunt Web Game</h1>
+                            <p>Some text in the Modal..</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
         <script src="script.js"></script>
         <script src="modals.js"></script>
     </body>

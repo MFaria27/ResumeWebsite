@@ -81,34 +81,25 @@ html {
     vertical-align: top;
 }
 
-.thumbnail{
-    height: 40%;
+#project td{
     width: 50%;
-    float: left;
-    margin: 5px;
+}
+
+.entry {
+    text-align: center;
+    font-size: 1.3vw;
+}
+
+.entry button {
+    font-size: 1.3vw;
+}
+
+.thumbnail {
+    width: 100%;
 }
 
 #github {
     text-align: center;
-}
-
-.entry {
-    width: 45%;
-    height: 40%;
-    float: right;
-    text-align: center;
-    font-size: 1.5vw;
-}
-
-.entry button {
-    font-size: 1.5vw;
-}
-
-.project {
-    width: 100%;
-    height: 50%;
-    overflow: hidden;
-    margin-top: 2em;
 }
 
 /* MODAL CSS TAKEN FROM W3SCHOOLS */
@@ -168,5 +159,5 @@ iframe {
 }
 
 .update {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
