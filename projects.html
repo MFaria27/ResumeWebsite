@@ -20,7 +20,8 @@
                     <th><a href="projects.html" class="highlighted">Projects</a></th>
                     <th><a href="about.html" class="unhighlighted">About</a></th>
                     <th><a href="resume.html" class="unhighlighted">Resume</a></th>
-                    <th><a id="switcher">styled.css</a></th>
+                    <!--- <th><a id="switcher">styled.css (In Progress)</a></th> --->
+                    <th>styled.css (In Progress)</th>
                 </tr>
             </table>
         </div>
@@ -30,7 +31,7 @@
         </div>
         <table id="project">
             <tr>
-                <td><img src="projects/SpotifyProjectThumbnail.png" alt="Spotify Visualization" class="thumbnail"></td>
+                <td><img src="projects/SpotifyVis/SpotifyProjectThumbnail.png" alt="Spotify Visualization" class="thumbnail"></td>
                 <td>
                     <div class="entry">
                         <h4>March 2022</h4>
@@ -42,7 +43,87 @@
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             <h1 style="text-align: center;">Visualizing Spotify Data with d3</h1>
-                            <p>Some text in the Modal..</p>
+                            <h3><a href="https://mfaria27.github.io/final/" target="_blank">Link to Visual</a></h3>
+                            <h3><a href="https://github.com/MFaria27/final" target="_blank">Link to Github</a></h3>
+                            <h2>Background</h2>
+                            <p>
+                                Spotify is one of, if not the most popular music streaming service used today. 
+                                What many people don't know is that Spotify has strangely specific data on each 
+                                song uploaded to its platform. Numerical values ranging from how danceable a song 
+                                is to how happy the tone of the song is.
+                            </p>
+                            <p>
+                                This project was created to visually display interesting Spotify data in order to 
+                                analyze and hopefully answer the question: "What makes a song popular?"
+                            </p>
+                            <h2>Data Collection</h2>
+                            <p>
+                                Gathering the data was done using Spotify's python library, Spotipy. 
+                                Yhe API allowed for the scraping of song information, audio information, and 
+                                each song's calculated popularity scores. 
+                            </p>
+                            <p>
+                                In order to get the best grasp of what trends "Popular" songs follow, I gave Spotipy 
+                                the playlist ID's of the top tracks of 2018 - 2021, each of which contained either 50 
+                                or 100 songs on Spotify's most popular songs of those years.
+                            </p>
+                            <p>
+                                After some data analysis and cleaning, the code produced a csv file of 250 songs and 
+                                their data curated by Spotify.
+                            </p>
+                            <img src="projects/SpotifyVis/DataCollection.png" style="width: 100%; max-height: 100%;">
+                            <h2>The Visual</h2>
+                            <img src="projects/SpotifyVis/SpotifyProjectThumbnail.png" style="width:80%">
+                            <p>
+                                Created using the Javascript libaray D3, the website contains 4 tabs, each representing 
+                                a different "top tracks of the year" playlist with 6 graphs each.
+                            
+                            </p>
+                            <p>
+                                All graphs have the same Y-Axis which represents a song's <b>popularity</b> calculated by Spotify. 
+                                Each graph has a different X-Axis, representing the numerical score of a songs 
+                                <b>Danceability, Loudness, Liveness, Speechiness, Energy and Valance.</b>
+                            </p>
+                            <p>
+                                Each graph has the same songs which connects every graph. For Example:
+                            </p>
+                            <img src="projects/SpotifyVis/Selected.png">
+                            <p>
+                                In the above screenshot, I went into the 2020 tab and selected the song "Bad Guy" by 
+                                Billie Eilish in the "Loudness" graph. Doing so has highlighted where the song is on 
+                                every graph and also shown the score associated with the song/category in the title 
+                                of the graph. Selecting another song or clicking the blank space of a graph will deselect
+                                a song.
+                            </p>
+                            <p>
+                                From this data, the songs that are seen as "popular" in the past 4 years have some 
+                                common traits such as:
+                            </p>
+                            <ul>
+                                <li>High Energy</li>
+                                <li>Generally Louder</li>
+                                <li>Very "Danceable"</li>
+                            </ul>
+                            <p>
+                                The one graph that doesn't really show anything is the Valence graph, which shows that 
+                                a song doesn't have to be "Happy" or "Sad" to be popular.
+                            </p>
+                            <h2>Going Forward</h2>
+                            <p>
+                                Creating this visualization was pretty interesting, as it taught me the intricacies of 
+                                visualizing data and just how much you can add to make illustrations interesting yet 
+                                infomative. There are a couple things that I would like to add to make the visuals better:
+                            </p>
+                            <ul>
+                                <li>A Spotify music player (So you can listen to the music you select)</li>
+                                <li>Maybe adding "Popularity" to the Y-Axis of each graph</li>
+                                <li>More songs that aren't as popular</li>
+                                <li>A song selector to look up points</li>
+                            </ul>
+                            <p>
+                                If you would like to see more about this project, please check out this 
+                                <a href="https://github.com/MFaria27/final/blob/main/Progress%20Book.pdf" target="_blank">Progress Book</a> on the process of creating this project!
+                            </p>
                         </div>
                     </div>
                 </td>
@@ -60,13 +141,95 @@
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             <h1 style="text-align: center;">Predicting Song Popularty using Spotipy</h1>
-                            <p>Some text in the Modal..</p>
+                            <h3><a href="https://github.com/MFaria27/DS3010-Spotify-Project" target="_blank">Link to Github</a></h3>
+                            <h2>Background</h2>
+                            <p>
+                                Spotify stores many metrics/data on pretty much all the songs uploaded to their 
+                                platform. One of these data points is a calculated, numerical score representing 
+                                a song's "popularity." 
+                            </p>
+                            <p>
+                                If a song had a popularity index of 10, one could 
+                                assume the song was gaining traction, but was not very popular. A score of 90 
+                                would mean that the song was very popular, and that anything above that would 
+                                be in the list of top tracks on Spotify.
+                            </p>
+                            <p>
+                                With all this musical data translated into numerical form, my partner, Alvin Lee, 
+                                and I would attempt to use machine learning in order to predict what makes a song 
+                                popular with the question <b>"How will my song be received?"</b>
+                            </p>
+                            <h2>Data Collection</h2>
+                            <p>
+                                When creating our algorithm, we needed to create a large, clean dataset in order 
+                                to properly start. To find the data, we used Spotify's API python library, Spotipy. 
+                                Spotipy allowed us to scrap a songs information, such as:
+                            </p>
+                            <ul>
+                                <li>Song Information:</li>
+                                <ul>
+                                    <li>Artist</li>
+                                    <li>Album</li>
+                                    <li>Track Name</li>
+                                    <li>Track ID</li>
+                                    <li>Release Date</li>
+                                    <li>Explicity</li>
+                                </ul>
+                                <li>Audio Information:</li>
+                                <ul>
+                                    <li>Danceability</li>
+                                    <li>Energy</li>
+                                    <li>Key</li>
+                                    <li>Loudness</li>
+                                    <li>Mode</li>
+                                    <li>Speechiness</li>
+                                    <li>Instrumentalness</li>
+                                    <li>Liveness</li>
+                                    <li>Valence</li>
+                                    <li>Tempo</li>
+                                    <li>Duration</li>
+                                </ul>
+                                <li>A Popularity Score (representing how "popular" a song is out of 100)</li>
+                            </ul>
+                            <p>
+                                With these as the features used to train our algorithm, we scraped a collection 
+                                of Spotify's top tracks playlists and the largest playlist of songs we could find 
+                                for our dataset.
+                            </p>
+                            <p>
+                                For anyone wondering, the large playlist was made by user DuckLover/F4F/Fox&WoldTeamAnim, and was 
+                                10,122 songs long! <a href="https://open.spotify.com/playlist/1151nuJMpCvYjgPaN1HCRk" target="_blank">Here</a> is a link to it.
+                            </p>
+                            <p>
+                                After cleaning some of the data; which included turning the key and mode String values 
+                                into numerical values, transforming the date released into a single number representing 
+                                the year released and checking and erasing null values for training; we began the creation 
+                                of our algorithm.
+                            </p>
+                            <h2>Training/Predicting Song Popularity</h2>
+                            <p>
+                                To begin, we took a csv of our fully processed data and split it by 30% for testing data and 
+                                70% for training data. 
+                                We trained our model with a Random Forest Regression in order to use both categorial 
+                                and continuous numeric features to produce a numeric prediction. 
+                                After fitting the model with our training data and predicting with the test data, we got a 
+                                RMSE of around 15 with a margin of error of +/- 30.
+                            </p>
+                            <p>
+                                While being 30 "popularity points" off isn't the best metric, it is pretty good seeing as 
+                                we had a relatively small dataset to work with. To improve this score, we would want to add 
+                                more data and more varied data, as working with more, different data will usually lead to better 
+                                predictions. It would also be good to try and scrape more data, such as genres, that we weren't able to 
+                                find using Spotipy. We also wanted to vizualize a dashboard using our prediction model so users could 
+                                "create" a theorectical song and see if it would do good (I might take up that project in the 
+                                future!).
+                            </p>
                         </div>
                     </div>
                 </td>
             </tr>
             <tr>
-                <td><img src="projects/DuckHuntScreenshot.png" alt="Duck Hunt Web Game" class="thumbnail"></td>
+                <td><img src="projects/Duck Hunt/DuckHuntScreenshot.png" alt="Duck Hunt Web Game" class="thumbnail"></td>
                 <td>
                     <div class="entry">
                         <h4>July 2020</h4>
@@ -78,7 +241,69 @@
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             <h1 style="text-align: center;">Duck Hunt Web Game</h1>
-                            <p>Some text in the Modal..</p>
+                            <h3><a href="https://mfaria27.github.io/DuckHuntWeb/" target="_blank">Link to Website</a></h3>
+                            <h3><a href="https://github.com/MFaria27/DuckHuntWeb" target="_blank">Link to Github</a></h3>
+                            <h2>Background</h2>
+                            <p>
+                                <b>Duck Hunt</b>, a game created by Nintendo in 1984, is a retro shooter game where the player
+                                takes the role of a hunter shooting ducks for points. 
+                            </p>
+                            <img src="projects/Duck Hunt/OG_DuckHunt.png">
+                            <p>
+                                In the original game, players would be greeted with the U.I. above. A counter with how many 
+                                ducks would be flying by, how many shots they get, a score, and the screen in which ducks 
+                                will periodically fly by. 
+                            </p>
+                            <h2>The Assignment</h2>
+                            <p>
+                                During a summer computer science program at WPI, we were tasked with each creating 
+                                a random website to present in a week. After learning the basics of Javascript, 
+                                I challenged myself by trying to make a playable game using html and javascript.
+                            </p>
+                            <p>
+                                I had experience making more tabletop games in java such as Othello, Chess and checkers, 
+                                so I wanted to make a game where time somewhat mattered. I thought about recreating other 
+                                retro games, but ultimately went with Duck Hunt.
+                            </p>
+                            <h2>The Project</h2>
+                            <img src="projects/Duck Hunt/DuckHuntStart.png"> 
+                            <p>
+                                On loading the website, users will be greeted with the above screen, displaying 
+                                the background, shots counters and the score. On the bottom of the screen there is 
+                                a start button; clicking it will prompt the user the following:
+                            </p>
+                            <img src="projects/Duck Hunt/prompt.png">
+                            <p>
+                                This will be the "rounds" of ducks. One round will include 10 ducks flying by and any 
+                                more user input rounds will be increased by 10 per round (3 rounds is 30 ducks). 
+                            </p>
+                            <p>
+                                After entering the rounds, the countdown of 3 seconds will begin. A single duck will 
+                                fly by with a randomly determined start point on the left of the screen and fly to 
+                                another random point on the right. If the user clicks on a flying duck, the duck object 
+                                will be replaced by an explosion adding 1000 points to the user's score. This will 
+                                continue until all birds have flown.
+                            </p>
+                            <img src="projects/Duck Hunt/DuckHuntScreenshot.png">
+                            <h2>Going Forward</h2>
+                            <p>
+                                This was a pretty old project and revisiting it, so with feedback from friends who 
+                                generally enjoyed the accessability of a Duck Hunt game hosted on a website, I can 
+                                think of a couple things I would like to add:
+                            </p>
+                            <ul>
+                                <li>A score modifier for multiple shots in a row</li>
+                                <li>A better, more visible start button</li>
+                                <li>Maybe use cookies or a save feature to keep track of scores</li>
+                                <li>A global high-score board</li>
+                                <li>More easy-to-understand "round" mechanic (Switch from a set number of birds to increasingly faster birds flying until a certain condition is met)</li>
+                                <li>Better visuals</li>
+                            </ul>
+                            <p>
+                                Most of these additions are definitely possible, so this will probably be the project 
+                                I revisit first to make improvements. Overall, This was definitely one of my more fun 
+                                projects so I hope more people can enjoy this website!
+                            </p>
                         </div>
                     </div>
                 </td>

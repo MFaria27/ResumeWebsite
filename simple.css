@@ -124,8 +124,16 @@ html {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
 }
+
+.modal-content img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
   
 /* The Close Button */
 .close {
@@ -145,12 +153,12 @@ iframe {
     margin-left: 10%;
 }
 
-.update h2 {
+.update h3 {
     margin-top: 10px;
     margin-bottom: 5px;
 }
 
-.update h3{
+.update h4{
     margin-top: 0px;
     margin-bottom: 5px;
 }
