@@ -1,6 +1,16 @@
+/*
+    All Files
+*/
+
 @font-face {
     font-family: font;
     src: url(fonts/Louis\ George\ Cafe.ttf);
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    font-family: font;
 }
 
 body {
@@ -13,16 +23,7 @@ hr {
     margin-left: 5%;
 }
 
-#name {
-    margin-bottom: -1.2em;
-}
-
-#name h1 {
-    color: black;
-    font-size: 2.5em;
-}
-
-#menubar a.unhighlighted{
+.unhighlighted{
     color: black;
     text-decoration: none;
 }
@@ -31,21 +32,57 @@ hr {
     color: black; 
 }
 
+#name {
+    margin-bottom: -1.2em;
+}
+
+#name h1 {
+    color: black;
+    font-size: 3em;
+}
+
+#menubar {
+    width: 80%;
+    overflow: hidden;
+    text-align: center;
+}
+
+#menubar a {
+    margin-right: 10%;
+    display: inline-block;
+    font-size: 1.3vw
+}
+
 #menubar a:hover {
     color: gray;
 }
 
-#menubar th {
-    font-weight: normal;
-    font-size: 1.3em;
-    padding-right: 1.5em;
+.update {
+    margin-bottom: 40px;
+    font-size: 1.3vw;
 }
 
-html {
-    height: 100%;
-    width: 100%;
-    font-family: font;
+/* 
+    index.html
+*/
+
+.update h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
+
+.update h4{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.update ul {
+    margin-top: 0px;
+}
+
+/*
+    about.html
+*/
 
 #profile {
     height: 300px;
@@ -68,13 +105,16 @@ html {
     text-align: center;
     font-size: 1.3vw;
 }
+
 #aboutsocials img {
     height: 30px;
     width: 30px;
 }
+
 #aboutsocials a{
     text-decoration: none;
 }
+
 #aboutsocials a:hover {
     text-decoration: underline;
 }
@@ -84,17 +124,25 @@ html {
 }
 
 #aboutother {
-    
     font-size: 1.3vw;
 }
 
-#project td{
-    width: 50%;
+/*
+    projects.html
+*/
+
+.project {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 12px;
 }
 
 .entry {
     text-align: center;
     font-size: 1.3vw;
+    width: 50%;
+    display: inline-block;
+    margin-top: 2%;
 }
 
 .entry button {
@@ -102,36 +150,36 @@ html {
 }
 
 .thumbnail {
-    width: 100%;
+    width: 50%;
+    display: block;
+    float: left;
 }
 
 #github {
     text-align: center;
 }
 
-/* MODAL CSS TAKEN FROM W3SCHOOLS */
+/* MODAL CSS FROM W3SCHOOLS */
 /* https://www.w3schools.com/howto/howto_css_modals.asp */
-/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
   
-/* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+    width: 50%; 
     font-size: 1.3vw;
 }
 
@@ -142,8 +190,6 @@ html {
     width: 50%;
 }
 
-  
-/* The Close Button */
 .close {
     color: #aaa;
     float: right;
@@ -157,24 +203,136 @@ html {
     cursor: pointer;
 }
 
+/*
+    resume.html
+*/
+
 iframe {
     margin-left: 10%;
 }
 
-.update h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
+/*                MOBILE VIEW                */
 
-.update h4{
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
-.update ul {
-    margin-top: 0px;
-}
+@media only screen and (max-width: 400px) {
+    /*
+        All files
+    */
+  
+    body {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+  
+    #name {
+        margin-bottom: -30px;
+    }
 
-.update {
-    margin-bottom: 40px;
-    font-size: 1.3vw;
+    #name h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+  
+    #menubar {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+        text-align: center;
+    }
+  
+    #menubar a {
+        padding-left: auto;
+        padding-right: auto;
+        width: 100%;
+        display: block;
+        font-size: 20px;
+    }
+
+    /*
+        index.html
+    */
+  
+    .update {
+        margin-bottom: 4px;
+        font-size: 18px;
+    }
+  
+    .update h3 {
+        margin-top: 5px;
+        margin-bottom: 4px;
+    }
+
+    .update h4{
+        margin-bottom: 4px;
+    }
+
+    /*
+        projects.html
+    */
+  
+    .project {
+        margin-bottom: 0px;
+    }
+  
+    .entry {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 20px;
+        width: 100%;
+        margin-top: 0px;
+    }
+  
+    .entry button {
+        font-size: 16px;
+    }
+  
+    .thumbnail {
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        float: none;
+    }
+  
+    .modal-content {
+        margin: 5% auto;
+        width: 75%; 
+        font-size: 16px;
+    }
+  
+    .modal-content img{
+        width: 80%;
+    }
+  
+    #github {
+        font-size: 15px;
+    }
+
+    /*
+        about.html
+    */
+  
+    #abouttext {
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 18px;
+        text-align: center;
+        width: 80%;
+    }
+
+    #aboutsocials {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 18px;
+    }
+  
+    #aboutsocials img {
+        height: 30px;
+        width: 30px;
+    }
+  
+    #aboutother {
+        font-size: 17px;
+    }
+  
 }
