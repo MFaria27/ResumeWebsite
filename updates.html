@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MF: Updates</title>
+        <link class="currentStyle" rel="stylesheet" href="simple.css">
+        <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+        
+    </head>
+    <body>
+        <div id="name">
+            <h1>Mattheus Faria</h1>
+        </div>
+        <div id="menubar">
+            <a href="index.html" class="unhighlighted">About</a>
+            <a href="projects.html" class="unhighlighted">Projects</a>
+            <a href="updates.html" class="highlighted">Updates</a>
+            <a href="resume.html" class="unhighlighted">Resume</a>
+        </div>
+        <hr>
+        <div class="update">
+            <h3>07-07-2022</h3>
+            <h4>Project: Resume Website</h4>
+            <ul>
+                <li>Added Images to Intern, Words and ViA</li>
+                <li>Scrapping the styled.css on this set of pages. When I get around to making a real interesting site, I will most likely make a new repository rather than adding on to this</li>
+                <li>Changed the arrangement of pages. About is now the landing page, updates are now a new tab</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>07-05-2022</h3>
+            <h4>Project: Resume Website</h4>
+            <ul>
+                <li>Added Intership Scrapper, Word Games and ViA to the projects tab</li>
+                <li>Forgot to add inital viewport scale to index, about and resume pages for mobile viewing, so that is fixed now</li>
+                <li>3 months of since the last commit to Github! Now I just got to make everything I uploaded look nice...</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>06-30-2022</h3>
+            <h4>Project: Resume Website</h4>
+            <ul>
+                <li>Added the Internship Scraper and Word Games to Github to prepare for ResWeb Update</li>
+                <li>Added Via to Github last month</li>
+                <li>Fixed some formatting issues with div wrapping</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>06-29-2022</h3>
+            <h4>Project: Resume Website</h4>
+            <ul>
+                <li>ResWeb has a new mobile view format (Should work for all phones, not tablets yet)</li>
+                <li>A lot of format changes to projects and menubar in html, as a switch from tables to straight divs was required to make wrapping in mobile view nicer (I guess what they say about making the mobile website first is true)</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>05-13-2022</h3>
+            <h4>Project: Internship Scraper</h4>
+            <ul>
+                <li>Improved Soup to make finding individual job listings a method</li>
+                <li>Added company rating, job salary and date posted to job listing information</li>
+                <li>Changed job search to take in any position at any location</li>
+                <ul>
+                    <li>Default if nothing is put in is still Data Science Intern in the Boston Area since</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>05-12-2022</h3>
+            <h4>Project: Internship Scraper</h4>
+            <ul>
+                <li>Use Beautiful Soup to get an html page of the first page of results on Indeed.com for "Data Science Intern"</li>
+                <li>Extract job title, company, location and Indeed link to csv</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>04-29-2022</h3>
+            <h4>Project: Word Games</h4>
+            <ul>
+                <li>Changed console interface to show both the guess and the emoji boxes side-by-side</li>
+                <li>Finished Wordle</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>04-28-2022</h3>
+            <h4>Project: Word Games</h4>
+            <ul>
+                <li>Finished Hangman, spruced up UI to include erasing the console (Makes it look like live updating based on input)</li>
+                <li>Began Wordle by using list comprehension to limit word list to list of 5 letter words</li>
+                <li>Imported Emojize for green, yellow and black boxes (easy wordle UI)</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>04-27-2022</h3>
+            <h4>Project: Word Games</h4>
+            <ul>
+                <li>Used requests to create a list of words from <a href="https://github.com/first20hours/google-10000-english/" target="_blank">this google analysis page</a></li>
+                <li>Started Hangman with basic guess while loop + UI</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>04-23-2022</h3>
+            <h4>Project: Personal Assistant ViA</h4>
+            <ul>
+                <li>Tuned settings on speech recognition</li>
+                <li>Added command for looking up a youtube video</li>
+                <li>Added option to choose what browser to use for web searching</li>
+                <li>Added logs (Text files that will save what ViA heard as long as its a command)</li>
+                <ul>
+                    <li>Will create a new log everytime ViA starts up and will end the log when shut down</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>04-22-2022</h3>
+            <h4>Project: Personal Assistant ViA</h4>
+            <ul>
+                <li>Added command cases for: turning off or restarting computer, aborting computer off subprocess, shutting down ViA, searching for something online</li>
+                <li>Will only listen to commands with the name "VIA" in them, skipping anything it hears without it</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>04-20-2022</h3>
+            <h4>Project: Personal Assistant ViA</h4>
+            <ul>
+                <li>Set up Text-To-Speech and Google speech recognition</li>
+                <li>Prints everything said into the mic (Runs on while loop with 3 second wait time in between listening again)</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>04-10-2022</h3>
+            <h4>Project: Resume Website</h4>
+            <ul>
+                <li>Removed the option to switch to a styled stylesheet (Until its complete)</li>
+                <li>Added a description to the Duck Hunt project modal</li>
+                <li>Added a description to the Spotify Visualization project modal</li>
+                <li>Added a description to the Spotify Machine Learning project modal</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>03-28-2022</h3>
+            <h4>Project: Resume Website</h4>
+            <ul>
+                <li>Switched from a more hard-coded style to a table style for the projects page (Image, Entry)</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>03-26-2022</h3>
+            <h4>Project: Resume Website</h4>
+            <ul>
+                <li>Added a rough "about me" to the about tab.</li>
+                <li>Added socials to about tab.</li>
+                <li>Added programming/application knowledge to about tab.</li>
+            </ul>
+        </div>
+        <div class="update">
+            <h3>03-25-2022</h3>
+            <h4>Project: Resume Website</h4>
+            <ul>
+                <li>Beginning to add entries for updates on projects on this landing page.</li>
+                <li>Switched default style of the page to be simple.css (Styled to be updated later)</li>
+            </ul>
+        </div>
+        <div class="update"> 
+            <h3>Pre 03-25-2022 (After the creation of this website)</h3>
+            <h4>Project: Resume Website</h4>
+            <ul>
+                <li>Added Data Vis and Data Prediction projects entries to project page (Need to update modals)</li>
+                <li>Added PDF viewer with a copy of my resume on the resume tab</li>
+                <li>Added the option to view a simpler styled page</li>
+                <li>Added Duck Hunt to project page (Need to update modal)</li>
+            </ul>
+            <h3>Project: Duck Hunt Website</h3>
+            <ul>
+                <li>Added Duck Hunt Website code from July 2020</li>
+                <li>Once this website is more complete, I will probably go back to it to make it more user friendly</li>
+            </ul>
+        </div>
+        <hr>
+        <script src="script.js"></script>
+    </body>
+</html>
