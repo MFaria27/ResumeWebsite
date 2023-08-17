@@ -1,6 +1,9 @@
 //Modal Code from W3SCHOOLS and translated into d3 
 //https://www.w3schools.com/howto/howto_css_modals.asp
 
+//UNUSED AS OF VISUAL UPDATE
+//STORING FOR POSSIBLE FUTURE USE
+
 var currentModal = 0;
 
 d3.selectAll(".buttons")
