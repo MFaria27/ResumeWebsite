@@ -278,6 +278,10 @@ g {
 
 @media only screen and (max-width: 69rem) {
 
+    .navbar-link {
+        font-size: large;
+    }
+
     /*
         about.html
     */
@@ -287,11 +291,11 @@ g {
       }  
     
     #about-content {
-        width: 26rem;
+        width: 23rem;
     }
 
     #profile-box {
-        padding-left: 17%;
+        padding-left: 11%;
     }
 
     #profile-box img {
@@ -306,8 +310,8 @@ g {
     }
     
     #about-contacts img {
-        height: 60px;
-        width: 60px;
+        height: 40px;
+        width: 40px;
         padding: 10px;
     }
 
@@ -320,7 +324,7 @@ g {
     }
 
     #project-content {
-        width: 26rem;
+        width: 23rem;
     }
 
     .project {
@@ -331,7 +335,7 @@ g {
         width: 40%;
     }
     .project-buttons button {
-        margin: 7% 10% 3% 10%;
+        margin: 15% 10% 3% 10%;
     }
 
     .project-meta {
@@ -348,7 +352,7 @@ g {
     }
 
     .project-code {
-        height: 15%;
+        padding-top: 30px;
         display: flex;
         justify-content: center;
     }
