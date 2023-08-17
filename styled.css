@@ -275,3 +275,85 @@ g {
     width: 100%;
     font-size: larger;
 }
+
+@media only screen and (max-width: 69rem) {
+
+    /*
+        about.html
+    */
+
+    #about-html, #about-body {
+        overflow: auto;
+      }  
+    
+    #about-content {
+        width: 26rem;
+    }
+
+    #profile-box {
+        padding-left: 17%;
+    }
+
+    #profile-box img {
+        max-width: 289.5px;
+        max-height: 360px;
+        float: none;
+    }
+    
+    #about-intro {
+        text-align: center;
+        font-size: 20px;
+    }
+    
+    #about-contacts img {
+        height: 60px;
+        width: 60px;
+        padding: 10px;
+    }
+
+    /*
+        projects.html
+    */
+
+    #particles {
+        height: 400vh;
+    }
+
+    #project-content {
+        width: 26rem;
+    }
+
+    .project {
+        height: 320px;
+    }
+
+    .project-buttons {
+        width: 40%;
+    }
+    .project-buttons button {
+        margin: 7% 10% 3% 10%;
+    }
+
+    .project-meta {
+        width: 60%;
+        text-align: center;
+    }
+
+    .project-title {
+        margin-right: 0;
+    }
+
+    .project-desc {
+        padding-left: 0;
+    }
+
+    .project-code {
+        height: 15%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .project-image {
+        display: none;
+    }
+}
