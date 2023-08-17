@@ -1,80 +1,277 @@
+/*
+    All Files
+*/
+
 @font-face {
-    font-family: unique;
-    src: url(fonts/Unique.ttf);
+    font-family: font;
+    src: url(fonts/Montserrat-Bold.ttf);
 }
 
-#name {
-    text-align: center;
+@font-face {
+    font-family: font-regular;
+    src: url(fonts/Montserrat-Regular.ttf);
 }
 
-#name h1 {
-    color: black;
-    font-family: unique;
-    font-size: 5em;
-    font-weight: normal;
-    margin-bottom: 0.3em;
-    margin-top: 0.5em;
+#particles {
+    background-color: #0c0c0c;
+    height: 250vh;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
 }
 
-#menubar {
-    background: white;
-    height: 4.6em;
-}
-
-#menubar table{ 
-    background: white;
-    width: 70%;
-    margin-left
-    : 15%;
-}
-#menubar a.unhighlighted{
-    color: black;
-    text-decoration: none;
-}
-
-.highlighted{
-    color: black; 
-}
-
-#menubar a:hover {
-    font-size: 1.4em;
-}
-
-#menubar th {
-    font-family: unique;
-    line-height: 1.5em;
-    font-size: 1.2em;
-    padding-top: 0.9em;
-    padding-bottom: 1em;
-    width: 20%;
-}
-
-html {
+#index-html, #index-body {
+    margin: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
+    overflow: hidden;
+    font-family: font;
+    color: white;
 }
 
-body {
-    background: #e9d9c8;
+#middleName {
+    color: #62C370;
 }
 
-hr {
-    border-top: 3px solid white;
-    margin-bottom: 10px;
+#navbar {
+    
+    margin: 1% 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#about {
-    /* background: white; */
-    margin-left: 7.2em;
-    margin-right: 7.2em;
+ul {
+    float: right;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
 }
 
-#profile {
-    margin: 2em;
-    height: 450px;
-    width: 300px;
+li {
+    margin: 0 10px;
+    display: inline;
 }
 
-iframe {
-    margin-left: 10%;
+.navbar-link {
+    text-decoration: none;
+    font-size: x-large;
+    color: white;
+    transition: 0.3s;
+}
+.navbar-link:hover {
+    color: #62C370;
+}
+
+#MDF {
+    font-size: xx-large;
+    float: left;
+}
+
+g {
+    color: #62C370;
+}
+
+/*
+    index.html
+*/
+
+#nameCard {
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 100%;
+    font-size: larger;
+}
+
+/*
+    about.html
+*/
+
+#about-html, #about-body {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: font;
+    color: white;
+  }  
+
+#about-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 69rem;
+}
+
+#profile-box img{
+    max-width: 384px;
+    max-height: 480px;
+    float: left;
+    box-shadow: 0 0 20px 20px #0c0c0c;
+    margin-right: 25px;
+}
+
+#about-intro {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 24px;
+}
+
+#about-contacts {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about-contacts img {
+    height: 130px;
+    width: 130px;
+    border-radius: 20%;
+    border: solid white 5px;
+    padding: 30px;
+}
+#about-contacts a {
+    display: inline-block;
+    margin-left: 9.1%;
+    margin-right: 9.1%;
+}
+
+
+/*
+    projects.html
+*/
+
+#projects-html, #projects-body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: font;
+    color: white;
+}
+
+#project-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 55rem;
+}
+
+.project {
+    width: 100%;
+    height: 200px;
+    opacity: 90%;
+    margin-bottom: 30px;
+    border: solid gray 3px;
+    border-radius: 25px;
+    background-color: #0c0c0c;
+    transition: 0.3s;
+}
+.project:hover {
+    border: solid white 3px;
+}
+
+.project-buttons {
+    width: 20%;
+    height: 97%;
+    float: left;
+}
+.project-buttons button {
+    background-color: #0c0c0c;
+    border: solid #62C370 4px;
+    border-radius: 25px;
+    color: #62C370;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 80%;
+    height: 40%;
+    margin: 6% 10%;
+    font-family: font;
+    transition: 0.3s;
+}
+.project-buttons button:hover{
+    background-color: #62C370;
+    color: #0c0c0c;
+}
+
+.project-meta {
+    width: 49%;
+    height: 97%;
+    float: left;
+}
+
+.project-title {
+    width: 95%;
+    margin: 15px 0;
+}
+.project-title h3 {
+    margin: 0;
+}
+
+.project-desc {
+    width: 90%;
+    height: 45%;
+    padding-left: 20px;
+    font-family: font-regular;
+}
+.project-desc p {
+    font-size: small;
+}
+
+.project-code {
+    width: 90%;
+    height: 25%;
+}
+.code-img {
+    height: 40px;
+    width: 40px;
+    float: left;
+    padding: 5px;
+}
+
+.project-image {
+    width: 30%;
+    height: 97%;
+    float: right;
+    margin-right: 5px;
+}
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*
+    resume.html
+*/
+
+#resume-html, #resume-body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: font;
+    color: white;
+}
+  
+#resume-pdf {
+    position: absolute;
+    text-align: center;
+    top: 10%;
+    width: 100%;
+    font-size: larger;
 }

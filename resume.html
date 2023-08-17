@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 
-<html>
+<html id="resume-html">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MF: Resume</title>
-        <link class="currentStyle" rel="stylesheet" href="simple.css">
+        <title>Mattheus Faria</title>
+        <link class="currentStyle" rel="stylesheet" href="styled.css">
         <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
         
     </head>
-    <body>
-        <div id="name">
-            <h1>Mattheus Faria</h1>
+    <body id="resume-body">
+        <div id="particles"></div>
+        <div id="navbar">
+            <a id="MDF" href="index.html" class="navbar-link">M<g>D</g>F</a>
+            <ul>
+                <li><a href="about.html" class="navbar-link">About</a></li>
+                <li><a href="projects.html" class="navbar-link">Projects</a></li>
+                <li><a href="resume.html" class="navbar-link">Resume</a></li>
+            </ul>
         </div>
-        <div id="menubar">
-            <a href="index.html" class="unhighlighted">About</a>
-            <a href="projects.html" class="unhighlighted">Projects</a>
-            <a href="updates.html" class="highlighted">Updates</a>
-            <a href="resume.html" class="highlighted">Resume</a>
-        </div>
-        <hr>
-        <iframe src="MFaria Resume 2022.pdf" width="80%" height="1000px"></iframe>
-        <hr>
-        <script src="script.js"></script>
+        <h1 id="resume-pdf"><a href="assets/MFaria Resume Oct 2023.pdf" target="_blank" class="navbar-link">PDF VERSION</a></h1>
+        
+        <script src="js/particles.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
