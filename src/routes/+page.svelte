@@ -1,3 +1,8 @@
+<svelte:head>
+    <script src="{ base }/particles/particles.js"></script>
+    <script src="{ base }/particles/start-particles.js"></script>
+</svelte:head>
+
 <!-- HTML -->
 <main class="h-100 page">
     <div id="particles-js"></div>
@@ -18,7 +23,7 @@
         background-color: #0c0c0c;
         height: 103vh;
         width: 100%;
-        z-index: -1;
+        z-index: 0;
         position: absolute;
         top: 0;
         left: 0;
@@ -51,10 +56,5 @@
     import Projects from "./projects.svelte";
     import Resume from "./resume.svelte";
     import { section } from "../store";
-    import { browser } from "$app/environment";
+    import { base } from "$app/paths";
 </script>
-
-{#if browser}
-<script src="%sveltekit.assets%/particles/particles.js"></script>
-<!-- <script src="%sveltekit.assets%/particles/start-particles.js"></script> -->
-{/if}
