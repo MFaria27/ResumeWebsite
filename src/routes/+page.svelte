@@ -1,6 +1,5 @@
 <svelte:head>
     <script src="{ base }/particles/particles.js"></script>
-    <script src="{ base }/particles/start-particles.js"></script>
 </svelte:head>
 
 <!-- HTML -->
@@ -57,4 +56,20 @@
     import Resume from "./resume.svelte";
     import { section } from "../store";
     import { base } from "$app/paths";
+    import { onMount } from "svelte";
+
+    let particleReady = false;
+    let mounted = false;
+
+    onMount(() => {
+        loadParticle();
+    });
+    
+    function loadParticle(){
+        particlesJS.load('particles-js', base+"/particles/particles.json", function() {
+            console.log('callback - particles-js config loaded');
+        });
+    }
+    
+
 </script>
