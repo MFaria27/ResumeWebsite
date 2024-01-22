@@ -3,7 +3,7 @@
     <div class="container">
         <div class="is-flex is-justify-content-center">
             <h1>
-                <a class="is-bold is-size-3" href="/MFaria Resume Oct 2023.pdf" target="_blank">PDF VERSION</a>
+                <a class="is-bold is-size-3" href="{ base }/MFaria Resume Oct 2023.pdf" target="_blank">PDF VERSION</a>
             </h1>
         </div>
     </div>
@@ -16,5 +16,5 @@
 
 <!-- TypeScript -->
 <script lang="ts">
-
+    import {base} from "$app/paths"
 </script>

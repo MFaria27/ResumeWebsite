@@ -10,7 +10,7 @@
                         </header>
                         <div class="card-image">
                             <figure class="image is-3by1">
-                                <img src={project.Thumbnail.Icon} alt={project.Thumbnail.Alt}>
+                                <img src={ base }{project.Thumbnail.Icon} alt={project.Thumbnail.Alt}>
                             </figure>
                         </div>
                         <div class="card-content">
@@ -30,7 +30,7 @@
                                 {#each project.Code_Used as icon}
                                     <div class="column is-one-fifth">
                                         <figure class="image is-48x48">
-                                            <img src={icon.Icon} alt={icon.Alt}>
+                                            <img src={ base }{icon.Icon} alt={icon.Alt}>
                                         </figure>
                                     </div>
                                 {/each}
@@ -76,5 +76,5 @@
 <!-- TypeScript -->
 <script lang="ts">
     import { projects } from "./projects/aaa_projects"
-
+    import { base } from "$app/paths";
 </script>
