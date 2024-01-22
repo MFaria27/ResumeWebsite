@@ -7,6 +7,7 @@
 /* v2.0.0
 /* ----------------------------------------------- */
 
+// @ts-ignore
 var pJS = function(tag_id, params){
 
     var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
@@ -15,7 +16,9 @@ var pJS = function(tag_id, params){
     this.pJS = {
       canvas: {
         el: canvas_el,
+        // @ts-ignore
         w: canvas_el.offsetWidth,
+        // @ts-ignore
         h: canvas_el.offsetHeight
       },
       particles: {
@@ -138,9 +141,11 @@ var pJS = function(tag_id, params){
   
     /* params settings */
     if(params){
+      // @ts-ignore
       Object.deepExtend(pJS, params);
     }
   
+    // @ts-ignore
     pJS.tmp.obj = {
       size_value: pJS.particles.size.value,
       size_anim_speed: pJS.particles.size.anim.speed,
@@ -154,28 +159,44 @@ var pJS = function(tag_id, params){
     };
   
   
+    // @ts-ignore
     pJS.fn.retinaInit = function(){
   
       if(pJS.retina_detect && window.devicePixelRatio > 1){
+        // @ts-ignore
         pJS.canvas.pxratio = window.devicePixelRatio; 
+        // @ts-ignore
         pJS.tmp.retina = true;
       } 
       else{
+        // @ts-ignore
         pJS.canvas.pxratio = 1;
+        // @ts-ignore
         pJS.tmp.retina = false;
       }
   
+      // @ts-ignore
       pJS.canvas.w = pJS.canvas.el.offsetWidth * pJS.canvas.pxratio;
+      // @ts-ignore
       pJS.canvas.h = pJS.canvas.el.offsetHeight * pJS.canvas.pxratio;
   
+      // @ts-ignore
       pJS.particles.size.value = pJS.tmp.obj.size_value * pJS.canvas.pxratio;
+      // @ts-ignore
       pJS.particles.size.anim.speed = pJS.tmp.obj.size_anim_speed * pJS.canvas.pxratio;
+      // @ts-ignore
       pJS.particles.move.speed = pJS.tmp.obj.move_speed * pJS.canvas.pxratio;
+      // @ts-ignore
       pJS.particles.line_linked.distance = pJS.tmp.obj.line_linked_distance * pJS.canvas.pxratio;
+      // @ts-ignore
       pJS.interactivity.modes.grab.distance = pJS.tmp.obj.mode_grab_distance * pJS.canvas.pxratio;
+      // @ts-ignore
       pJS.interactivity.modes.bubble.distance = pJS.tmp.obj.mode_bubble_distance * pJS.canvas.pxratio;
+      // @ts-ignore
       pJS.particles.line_linked.width = pJS.tmp.obj.line_linked_width * pJS.canvas.pxratio;
+      // @ts-ignore
       pJS.interactivity.modes.bubble.size = pJS.tmp.obj.mode_bubble_size * pJS.canvas.pxratio;
+      // @ts-ignore
       pJS.interactivity.modes.repulse.distance = pJS.tmp.obj.mode_repulse_distance * pJS.canvas.pxratio;
   
     };
@@ -184,40 +205,57 @@ var pJS = function(tag_id, params){
   
     /* ---------- pJS functions - canvas ------------ */
   
+    // @ts-ignore
     pJS.fn.canvasInit = function(){
+      // @ts-ignore
       pJS.canvas.ctx = pJS.canvas.el.getContext('2d');
     };
   
+    // @ts-ignore
     pJS.fn.canvasSize = function(){
   
+      // @ts-ignore
       pJS.canvas.el.width = pJS.canvas.w;
+      // @ts-ignore
       pJS.canvas.el.height = pJS.canvas.h;
   
       if(pJS && pJS.interactivity.events.resize){
   
         window.addEventListener('resize', function(){
   
+            // @ts-ignore
             pJS.canvas.w = pJS.canvas.el.offsetWidth;
+            // @ts-ignore
             pJS.canvas.h = pJS.canvas.el.offsetHeight;
   
             /* resize canvas */
+            // @ts-ignore
             if(pJS.tmp.retina){
+              // @ts-ignore
               pJS.canvas.w *= pJS.canvas.pxratio;
+              // @ts-ignore
               pJS.canvas.h *= pJS.canvas.pxratio;
             }
   
+            // @ts-ignore
             pJS.canvas.el.width = pJS.canvas.w;
+            // @ts-ignore
             pJS.canvas.el.height = pJS.canvas.h;
   
             /* repaint canvas on anim disabled */
             if(!pJS.particles.move.enable){
+              // @ts-ignore
               pJS.fn.particlesEmpty();
+              // @ts-ignore
               pJS.fn.particlesCreate();
+              // @ts-ignore
               pJS.fn.particlesDraw();
+              // @ts-ignore
               pJS.fn.vendors.densityAutoParticles();
             }
   
           /* density particles enabled */
+          // @ts-ignore
           pJS.fn.vendors.densityAutoParticles();
   
         });
@@ -227,17 +265,22 @@ var pJS = function(tag_id, params){
     };
   
   
+    // @ts-ignore
     pJS.fn.canvasPaint = function(){
+      // @ts-ignore
       pJS.canvas.ctx.fillRect(0, 0, pJS.canvas.w, pJS.canvas.h);
     };
   
+    // @ts-ignore
     pJS.fn.canvasClear = function(){
+      // @ts-ignore
       pJS.canvas.ctx.clearRect(0, 0, pJS.canvas.w, pJS.canvas.h);
     };
   
   
     /* --------- pJS functions - particles ----------- */
   
+    // @ts-ignore
     pJS.fn.particle = function(color, opacity, position){
   
       /* size */
@@ -262,6 +305,7 @@ var pJS = function(tag_id, params){
   
       /* check position - avoid overlap */
       if(pJS.particles.move.bounce){
+        // @ts-ignore
         pJS.fn.vendors.checkOverlap(this, position);
       }
   
@@ -271,9 +315,11 @@ var pJS = function(tag_id, params){
   
         if(color.value instanceof Array){
           var color_selected = color.value[Math.floor(Math.random() * pJS.particles.color.value.length)];
+          // @ts-ignore
           this.color.rgb = hexToRgb(color_selected);
         }else{
           if(color.value.r != undefined && color.value.g != undefined && color.value.b != undefined){
+            // @ts-ignore
             this.color.rgb = {
               r: color.value.r,
               g: color.value.g,
@@ -281,6 +327,7 @@ var pJS = function(tag_id, params){
             }
           }
           if(color.value.h != undefined && color.value.s != undefined && color.value.l != undefined){
+            // @ts-ignore
             this.color.hsl = {
               h: color.value.h,
               s: color.value.s,
@@ -291,6 +338,7 @@ var pJS = function(tag_id, params){
   
       }
       else if(color.value == 'random'){
+        // @ts-ignore
         this.color.rgb = {
           r: (Math.floor(Math.random() * (255 - 0 + 1)) + 0),
           g: (Math.floor(Math.random() * (255 - 0 + 1)) + 0),
@@ -345,14 +393,18 @@ var pJS = function(tag_id, params){
       }
   
       if(pJS.particles.move.straight){
+        // @ts-ignore
         this.vx = velbase.x;
+        // @ts-ignore
         this.vy = velbase.y;
         if(pJS.particles.move.random){
           this.vx = this.vx * (Math.random());
           this.vy = this.vy * (Math.random());
         }
       }else{
+        // @ts-ignore
         this.vx = velbase.x + Math.random()-0.5;
+        // @ts-ignore
         this.vy = velbase.y + Math.random()-0.5;
       }
   
@@ -369,7 +421,9 @@ var pJS = function(tag_id, params){
   
       var shape_type = pJS.particles.shape.type;
       if(typeof(shape_type) == 'object'){
+        // @ts-ignore
         if(shape_type instanceof Array){
+          // @ts-ignore
           var shape_selected = shape_type[Math.floor(Math.random() * shape_type.length)];
           this.shape = shape_selected;
         }
@@ -384,9 +438,13 @@ var pJS = function(tag_id, params){
           ratio: sh.image.width / sh.image.height
         }
         if(!this.img.ratio) this.img.ratio = 1;
+        // @ts-ignore
         if(pJS.tmp.img_type == 'svg' && pJS.tmp.source_svg != undefined){
+          // @ts-ignore
           pJS.fn.vendors.createSvgImg(this);
+          // @ts-ignore
           if(pJS.tmp.pushing){
+            // @ts-ignore
             this.img.loaded = false;
           }
         }
@@ -397,6 +455,7 @@ var pJS = function(tag_id, params){
     };
   
   
+    // @ts-ignore
     pJS.fn.particle.prototype.draw = function() {
   
       var p = this;
@@ -419,25 +478,32 @@ var pJS = function(tag_id, params){
         var color_value = 'hsla('+p.color.hsl.h+','+p.color.hsl.s+'%,'+p.color.hsl.l+'%,'+opacity+')';
       }
   
+      // @ts-ignore
       pJS.canvas.ctx.fillStyle = color_value;
+      // @ts-ignore
       pJS.canvas.ctx.beginPath();
   
       switch(p.shape){
   
         case 'circle':
+          // @ts-ignore
           pJS.canvas.ctx.arc(p.x, p.y, radius, 0, Math.PI * 2, false);
         break;
   
         case 'edge':
+          // @ts-ignore
           pJS.canvas.ctx.rect(p.x-radius, p.y-radius, radius*2, radius*2);
         break;
   
         case 'triangle':
+          // @ts-ignore
           pJS.fn.vendors.drawShape(pJS.canvas.ctx, p.x-radius, p.y+radius / 1.66, radius*2, 3, 2);
         break;
   
         case 'polygon':
+          // @ts-ignore
           pJS.fn.vendors.drawShape(
+            // @ts-ignore
             pJS.canvas.ctx,
             p.x - radius / (pJS.particles.shape.polygon.nb_sides/3.5), // startX
             p.y - radius / (2.66/3.5), // startY
@@ -448,7 +514,9 @@ var pJS = function(tag_id, params){
         break;
   
         case 'star':
+          // @ts-ignore
           pJS.fn.vendors.drawShape(
+            // @ts-ignore
             pJS.canvas.ctx,
             p.x - radius*2 / (pJS.particles.shape.polygon.nb_sides/4), // startX
             p.y - radius / (2*2.66/3.5), // startY
@@ -461,6 +529,7 @@ var pJS = function(tag_id, params){
         case 'image':
   
           function draw(){
+            // @ts-ignore
             pJS.canvas.ctx.drawImage(
               img_obj,
               p.x-radius,
@@ -470,9 +539,11 @@ var pJS = function(tag_id, params){
             );
           }
   
+          // @ts-ignore
           if(pJS.tmp.img_type == 'svg'){
             var img_obj = p.img.obj;
           }else{
+            // @ts-ignore
             var img_obj = pJS.tmp.img_obj;
           }
   
@@ -484,30 +555,39 @@ var pJS = function(tag_id, params){
   
       }
   
+      // @ts-ignore
       pJS.canvas.ctx.closePath();
   
       if(pJS.particles.shape.stroke.width > 0){
+        // @ts-ignore
         pJS.canvas.ctx.strokeStyle = pJS.particles.shape.stroke.color;
+        // @ts-ignore
         pJS.canvas.ctx.lineWidth = pJS.particles.shape.stroke.width;
+        // @ts-ignore
         pJS.canvas.ctx.stroke();
       }
       
+      // @ts-ignore
       pJS.canvas.ctx.fill();
       
     };
   
   
+    // @ts-ignore
     pJS.fn.particlesCreate = function(){
       for(var i = 0; i < pJS.particles.number.value; i++) {
+        // @ts-ignore
         pJS.particles.array.push(new pJS.fn.particle(pJS.particles.color, pJS.particles.opacity.value));
       }
     };
   
+    // @ts-ignore
     pJS.fn.particlesUpdate = function(){
   
       for(var i = 0; i < pJS.particles.array.length; i++){
   
         /* the particle */
+        // @ts-ignore
         var p = pJS.particles.array[i];
   
         // var d = ( dx = pJS.interactivity.mouse.click_pos_x - p.x ) * dx + ( dy = pJS.interactivity.mouse.click_pos_y - p.y ) * dy;
@@ -558,6 +638,7 @@ var pJS = function(tag_id, params){
             y_bottom: pJS.canvas.h
           }
         }else{
+          // @ts-ignore
           var new_pos = {
             x_left: -p.radius,
             x_right: pJS.canvas.w + p.radius,
@@ -595,34 +676,41 @@ var pJS = function(tag_id, params){
   
         /* events */
         if(isInArray('grab', pJS.interactivity.events.onhover.mode)){
+          // @ts-ignore
           pJS.fn.modes.grabParticle(p);
         }
   
         if(isInArray('bubble', pJS.interactivity.events.onhover.mode) || isInArray('bubble', pJS.interactivity.events.onclick.mode)){
+          // @ts-ignore
           pJS.fn.modes.bubbleParticle(p);
         }
   
         if(isInArray('repulse', pJS.interactivity.events.onhover.mode) || isInArray('repulse', pJS.interactivity.events.onclick.mode)){
+          // @ts-ignore
           pJS.fn.modes.repulseParticle(p);
         }
   
         /* interaction auto between particles */
         if(pJS.particles.line_linked.enable || pJS.particles.move.attract.enable){
           for(var j = i + 1; j < pJS.particles.array.length; j++){
+            // @ts-ignore
             var p2 = pJS.particles.array[j];
   
             /* link particles */
             if(pJS.particles.line_linked.enable){
+              // @ts-ignore
               pJS.fn.interact.linkParticles(p,p2);
             }
   
             /* attract particles */
             if(pJS.particles.move.attract.enable){
+              // @ts-ignore
               pJS.fn.interact.attractParticles(p,p2);
             }
   
             /* bounce particles */
             if(pJS.particles.move.bounce){
+              // @ts-ignore
               pJS.fn.interact.bounceParticles(p,p2);
             }
   
@@ -634,38 +722,52 @@ var pJS = function(tag_id, params){
   
     };
   
+    // @ts-ignore
     pJS.fn.particlesDraw = function(){
   
       /* clear canvas */
+      // @ts-ignore
       pJS.canvas.ctx.clearRect(0, 0, pJS.canvas.w, pJS.canvas.h);
   
       /* update each particles param */
+      // @ts-ignore
       pJS.fn.particlesUpdate();
   
       /* draw each particle */
       for(var i = 0; i < pJS.particles.array.length; i++){
+        // @ts-ignore
         var p = pJS.particles.array[i];
         p.draw();
       }
   
     };
   
+    // @ts-ignore
     pJS.fn.particlesEmpty = function(){
       pJS.particles.array = [];
     };
   
+    // @ts-ignore
     pJS.fn.particlesRefresh = function(){
   
       /* init all */
+      // @ts-ignore
       cancelRequestAnimFrame(pJS.fn.checkAnimFrame);
+      // @ts-ignore
       cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
+      // @ts-ignore
       pJS.tmp.source_svg = undefined;
+      // @ts-ignore
       pJS.tmp.img_obj = undefined;
+      // @ts-ignore
       pJS.tmp.count_svg = 0;
+      // @ts-ignore
       pJS.fn.particlesEmpty();
+      // @ts-ignore
       pJS.fn.canvasClear();
       
       /* restart */
+      // @ts-ignore
       pJS.fn.vendors.start();
   
     };
@@ -673,6 +775,7 @@ var pJS = function(tag_id, params){
   
     /* ---------- pJS functions - particles interaction ------------ */
   
+    // @ts-ignore
     pJS.fn.interact.linkParticles = function(p1, p2){
   
       var dx = p1.x - p2.x,
@@ -687,16 +790,24 @@ var pJS = function(tag_id, params){
         if(opacity_line > 0){        
           
           /* style */
+          // @ts-ignore
           var color_line = pJS.particles.line_linked.color_rgb_line;
+          // @ts-ignore
           pJS.canvas.ctx.strokeStyle = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
+          // @ts-ignore
           pJS.canvas.ctx.lineWidth = pJS.particles.line_linked.width;
           //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
           
           /* path */
+          // @ts-ignore
           pJS.canvas.ctx.beginPath();
+          // @ts-ignore
           pJS.canvas.ctx.moveTo(p1.x, p1.y);
+          // @ts-ignore
           pJS.canvas.ctx.lineTo(p2.x, p2.y);
+          // @ts-ignore
           pJS.canvas.ctx.stroke();
+          // @ts-ignore
           pJS.canvas.ctx.closePath();
   
         }
@@ -706,6 +817,7 @@ var pJS = function(tag_id, params){
     };
   
   
+    // @ts-ignore
     pJS.fn.interact.attractParticles  = function(p1, p2){
   
       /* condensed particles */
@@ -730,6 +842,7 @@ var pJS = function(tag_id, params){
     }
   
   
+    // @ts-ignore
     pJS.fn.interact.bounceParticles = function(p1, p2){
   
       var dx = p1.x - p2.x,
@@ -750,12 +863,15 @@ var pJS = function(tag_id, params){
   
     /* ---------- pJS functions - modes events ------------ */
   
+    // @ts-ignore
     pJS.fn.modes.pushParticles = function(nb, pos){
   
+      // @ts-ignore
       pJS.tmp.pushing = true;
   
       for(var i = 0; i < nb; i++){
         pJS.particles.array.push(
+          // @ts-ignore
           new pJS.fn.particle(
             pJS.particles.color,
             pJS.particles.opacity.value,
@@ -767,8 +883,10 @@ var pJS = function(tag_id, params){
         )
         if(i == nb-1){
           if(!pJS.particles.move.enable){
+            // @ts-ignore
             pJS.fn.particlesDraw();
           }
+          // @ts-ignore
           pJS.tmp.pushing = false;
         }
       }
@@ -776,22 +894,27 @@ var pJS = function(tag_id, params){
     };
   
   
+    // @ts-ignore
     pJS.fn.modes.removeParticles = function(nb){
   
       pJS.particles.array.splice(0, nb);
       if(!pJS.particles.move.enable){
+        // @ts-ignore
         pJS.fn.particlesDraw();
       }
   
     };
   
   
+    // @ts-ignore
     pJS.fn.modes.bubbleParticle = function(p){
   
       /* on hover event */
       if(pJS.interactivity.events.onhover.enable && isInArray('bubble', pJS.interactivity.events.onhover.mode)){
   
+        // @ts-ignore
         var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
+            // @ts-ignore
             dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
             dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse),
             ratio = 1 - dist_mouse / pJS.interactivity.modes.bubble.distance;
@@ -804,6 +927,7 @@ var pJS = function(tag_id, params){
         /* mousemove - check ratio */
         if(dist_mouse <= pJS.interactivity.modes.bubble.distance){
   
+          // @ts-ignore
           if(ratio >= 0 && pJS.interactivity.status == 'mousemove'){
             
             /* size */
@@ -816,6 +940,7 @@ var pJS = function(tag_id, params){
                 }
               }else{
                 var dif = p.radius - pJS.interactivity.modes.bubble.size,
+                    // @ts-ignore
                     size = p.radius - (dif*ratio);
                 if(size > 0){
                   p.radius_bubble = size;
@@ -827,15 +952,21 @@ var pJS = function(tag_id, params){
             }
   
             /* opacity */
+            // @ts-ignore
             if(pJS.interactivity.modes.bubble.opacity != pJS.particles.opacity.value){
   
+              // @ts-ignore
               if(pJS.interactivity.modes.bubble.opacity > pJS.particles.opacity.value){
+                // @ts-ignore
                 var opacity = pJS.interactivity.modes.bubble.opacity*ratio;
+                // @ts-ignore
                 if(opacity > p.opacity && opacity <= pJS.interactivity.modes.bubble.opacity){
                   p.opacity_bubble = opacity;
                 }
               }else{
+                // @ts-ignore
                 var opacity = p.opacity - (pJS.particles.opacity.value-pJS.interactivity.modes.bubble.opacity)*ratio;
+                // @ts-ignore
                 if(opacity < p.opacity && opacity >= pJS.interactivity.modes.bubble.opacity){
                   p.opacity_bubble = opacity;
                 }
@@ -851,6 +982,7 @@ var pJS = function(tag_id, params){
   
   
         /* mouseleave */
+        // @ts-ignore
         if(pJS.interactivity.status == 'mouseleave'){
           init();
         }
@@ -861,27 +993,36 @@ var pJS = function(tag_id, params){
       else if(pJS.interactivity.events.onclick.enable && isInArray('bubble', pJS.interactivity.events.onclick.mode)){
   
   
+        // @ts-ignore
         if(pJS.tmp.bubble_clicking){
+          // @ts-ignore
           var dx_mouse = p.x - pJS.interactivity.mouse.click_pos_x,
+              // @ts-ignore
               dy_mouse = p.y - pJS.interactivity.mouse.click_pos_y,
               dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse),
+              // @ts-ignore
               time_spent = (new Date().getTime() - pJS.interactivity.mouse.click_time)/1000;
   
           if(time_spent > pJS.interactivity.modes.bubble.duration){
+            // @ts-ignore
             pJS.tmp.bubble_duration_end = true;
           }
   
           if(time_spent > pJS.interactivity.modes.bubble.duration*2){
+            // @ts-ignore
             pJS.tmp.bubble_clicking = false;
+            // @ts-ignore
             pJS.tmp.bubble_duration_end = false;
           }
         }
   
   
+        // @ts-ignore
         function process(bubble_param, particles_param, p_obj_bubble, p_obj, id){
   
           if(bubble_param != particles_param){
   
+            // @ts-ignore
             if(!pJS.tmp.bubble_duration_end){
               if(dist_mouse <= pJS.interactivity.modes.bubble.distance){
                 if(p_obj_bubble != undefined) var obj = p_obj_bubble;
@@ -909,10 +1050,12 @@ var pJS = function(tag_id, params){
   
         }
   
+        // @ts-ignore
         if(pJS.tmp.bubble_clicking){
           /* size */
           process(pJS.interactivity.modes.bubble.size, pJS.particles.size.value, p.radius_bubble, p.radius, 'size');
           /* opacity */
+          // @ts-ignore
           process(pJS.interactivity.modes.bubble.opacity, pJS.particles.opacity.value, p.opacity_bubble, p.opacity, 'opacity');
         }
   
@@ -921,11 +1064,15 @@ var pJS = function(tag_id, params){
     };
   
   
+    // @ts-ignore
     pJS.fn.modes.repulseParticle = function(p){
   
+      // @ts-ignore
       if(pJS.interactivity.events.onhover.enable && isInArray('repulse', pJS.interactivity.events.onhover.mode) && pJS.interactivity.status == 'mousemove') {
   
+        // @ts-ignore
         var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
+            // @ts-ignore
             dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
             dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse);
   
@@ -952,18 +1099,25 @@ var pJS = function(tag_id, params){
   
       else if(pJS.interactivity.events.onclick.enable && isInArray('repulse', pJS.interactivity.events.onclick.mode)) {
   
+        // @ts-ignore
         if(!pJS.tmp.repulse_finish){
+          // @ts-ignore
           pJS.tmp.repulse_count++;
+          // @ts-ignore
           if(pJS.tmp.repulse_count == pJS.particles.array.length){
+            // @ts-ignore
             pJS.tmp.repulse_finish = true;
           }
         }
   
+        // @ts-ignore
         if(pJS.tmp.repulse_clicking){
   
           var repulseRadius = Math.pow(pJS.interactivity.modes.repulse.distance/6, 3);
   
+          // @ts-ignore
           var dx = pJS.interactivity.mouse.click_pos_x - p.x,
+              // @ts-ignore
               dy = pJS.interactivity.mouse.click_pos_y - p.y,
               d = dx*dx + dy*dy;
   
@@ -1005,6 +1159,7 @@ var pJS = function(tag_id, params){
   
         }else{
   
+          // @ts-ignore
           if(pJS.tmp.repulse_clicking == false){
   
             p.vx = p.vx_i;
@@ -1019,11 +1174,15 @@ var pJS = function(tag_id, params){
     }
   
   
+    // @ts-ignore
     pJS.fn.modes.grabParticle = function(p){
   
+      // @ts-ignore
       if(pJS.interactivity.events.onhover.enable && pJS.interactivity.status == 'mousemove'){
   
+        // @ts-ignore
         var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
+            // @ts-ignore
             dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
             dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse);
   
@@ -1035,16 +1194,24 @@ var pJS = function(tag_id, params){
           if(opacity_line > 0){
   
             /* style */
+            // @ts-ignore
             var color_line = pJS.particles.line_linked.color_rgb_line;
+            // @ts-ignore
             pJS.canvas.ctx.strokeStyle = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
+            // @ts-ignore
             pJS.canvas.ctx.lineWidth = pJS.particles.line_linked.width;
             //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
             
             /* path */
+            // @ts-ignore
             pJS.canvas.ctx.beginPath();
+            // @ts-ignore
             pJS.canvas.ctx.moveTo(p.x, p.y);
+            // @ts-ignore
             pJS.canvas.ctx.lineTo(pJS.interactivity.mouse.pos_x, pJS.interactivity.mouse.pos_y);
+            // @ts-ignore
             pJS.canvas.ctx.stroke();
+            // @ts-ignore
             pJS.canvas.ctx.closePath();
   
           }
@@ -1059,12 +1226,15 @@ var pJS = function(tag_id, params){
   
     /* ---------- pJS functions - vendors ------------ */
   
+    // @ts-ignore
     pJS.fn.vendors.eventsListeners = function(){
   
       /* events target element */
       if(pJS.interactivity.detect_on == 'window'){
+        // @ts-ignore
         pJS.interactivity.el = window;
       }else{
+        // @ts-ignore
         pJS.interactivity.el = pJS.canvas.el;
       }
   
@@ -1073,8 +1243,10 @@ var pJS = function(tag_id, params){
       if(pJS.interactivity.events.onhover.enable || pJS.interactivity.events.onclick.enable){
   
         /* el on mousemove */
+        // @ts-ignore
         pJS.interactivity.el.addEventListener('mousemove', function(e){
   
+          // @ts-ignore
           if(pJS.interactivity.el == window){
             var pos_x = e.clientX,
                 pos_y = e.clientY;
@@ -1084,23 +1256,33 @@ var pJS = function(tag_id, params){
                 pos_y = e.offsetY || e.clientY;
           }
   
+          // @ts-ignore
           pJS.interactivity.mouse.pos_x = pos_x;
+          // @ts-ignore
           pJS.interactivity.mouse.pos_y = pos_y;
   
+          // @ts-ignore
           if(pJS.tmp.retina){
+            // @ts-ignore
             pJS.interactivity.mouse.pos_x *= pJS.canvas.pxratio;
+            // @ts-ignore
             pJS.interactivity.mouse.pos_y *= pJS.canvas.pxratio;
           }
   
+          // @ts-ignore
           pJS.interactivity.status = 'mousemove';
   
         });
   
         /* el on onmouseleave */
+        // @ts-ignore
         pJS.interactivity.el.addEventListener('mouseleave', function(e){
   
+          // @ts-ignore
           pJS.interactivity.mouse.pos_x = null;
+          // @ts-ignore
           pJS.interactivity.mouse.pos_y = null;
+          // @ts-ignore
           pJS.interactivity.status = 'mouseleave';
   
         });
@@ -1110,10 +1292,14 @@ var pJS = function(tag_id, params){
       /* on click event */
       if(pJS.interactivity.events.onclick.enable){
   
+        // @ts-ignore
         pJS.interactivity.el.addEventListener('click', function(){
   
+          // @ts-ignore
           pJS.interactivity.mouse.click_pos_x = pJS.interactivity.mouse.pos_x;
+          // @ts-ignore
           pJS.interactivity.mouse.click_pos_y = pJS.interactivity.mouse.pos_y;
+          // @ts-ignore
           pJS.interactivity.mouse.click_time = new Date().getTime();
   
           if(pJS.interactivity.events.onclick.enable){
@@ -1122,30 +1308,39 @@ var pJS = function(tag_id, params){
   
               case 'push':
                 if(pJS.particles.move.enable){
+                  // @ts-ignore
                   pJS.fn.modes.pushParticles(pJS.interactivity.modes.push.particles_nb, pJS.interactivity.mouse);
                 }else{
                   if(pJS.interactivity.modes.push.particles_nb == 1){
+                    // @ts-ignore
                     pJS.fn.modes.pushParticles(pJS.interactivity.modes.push.particles_nb, pJS.interactivity.mouse);
                   }
                   else if(pJS.interactivity.modes.push.particles_nb > 1){
+                    // @ts-ignore
                     pJS.fn.modes.pushParticles(pJS.interactivity.modes.push.particles_nb);
                   }
                 }
               break;
   
               case 'remove':
+                // @ts-ignore
                 pJS.fn.modes.removeParticles(pJS.interactivity.modes.remove.particles_nb);
               break;
   
               case 'bubble':
+                // @ts-ignore
                 pJS.tmp.bubble_clicking = true;
               break;
   
               case 'repulse':
+                // @ts-ignore
                 pJS.tmp.repulse_clicking = true;
+                // @ts-ignore
                 pJS.tmp.repulse_count = 0;
+                // @ts-ignore
                 pJS.tmp.repulse_finish = false;
                 setTimeout(function(){
+                  // @ts-ignore
                   pJS.tmp.repulse_clicking = false;
                 }, pJS.interactivity.modes.repulse.duration*1000)
               break;
@@ -1161,13 +1356,17 @@ var pJS = function(tag_id, params){
   
     };
   
+    // @ts-ignore
     pJS.fn.vendors.densityAutoParticles = function(){
   
       if(pJS.particles.number.density.enable){
   
         /* calc area */
+        // @ts-ignore
         var area = pJS.canvas.el.width * pJS.canvas.el.height / 1000;
+        // @ts-ignore
         if(pJS.tmp.retina){
+          // @ts-ignore
           area = area/(pJS.canvas.pxratio*2);
         }
   
@@ -1176,7 +1375,9 @@ var pJS = function(tag_id, params){
   
         /* add or remove X particles */
         var missing_particles = pJS.particles.array.length - nb_particles;
+        // @ts-ignore
         if(missing_particles < 0) pJS.fn.modes.pushParticles(Math.abs(missing_particles));
+        // @ts-ignore
         else pJS.fn.modes.removeParticles(missing_particles);
   
       }
@@ -1184,8 +1385,10 @@ var pJS = function(tag_id, params){
     };
   
   
+    // @ts-ignore
     pJS.fn.vendors.checkOverlap = function(p1, position){
       for(var i = 0; i < pJS.particles.array.length; i++){
+        // @ts-ignore
         var p2 = pJS.particles.array[i];
   
         var dx = p1.x - p2.x,
@@ -1195,17 +1398,21 @@ var pJS = function(tag_id, params){
         if(dist <= p1.radius + p2.radius){
           p1.x = position ? position.x : Math.random() * pJS.canvas.w;
           p1.y = position ? position.y : Math.random() * pJS.canvas.h;
+          // @ts-ignore
           pJS.fn.vendors.checkOverlap(p1);
         }
       }
     };
   
   
+    // @ts-ignore
     pJS.fn.vendors.createSvgImg = function(p){
   
       /* set color to svg element */
+      // @ts-ignore
       var svgXml = pJS.tmp.source_svg,
           rgbHex = /#([0-9A-F]{3,6})/gi,
+          // @ts-ignore
           coloredSvgXml = svgXml.replace(rgbHex, function (m, r, g, b) {
             if(p.color.rgb){
               var color_value = 'rgba('+p.color.rgb.r+','+p.color.rgb.g+','+p.color.rgb.b+','+p.opacity+')';
@@ -1226,6 +1433,7 @@ var pJS = function(tag_id, params){
         p.img.obj = img;
         p.img.loaded = true;
         DOMURL.revokeObjectURL(url);
+        // @ts-ignore
         pJS.tmp.count_svg++;
       });
       img.src = url;
@@ -1233,13 +1441,18 @@ var pJS = function(tag_id, params){
     };
   
   
+    // @ts-ignore
     pJS.fn.vendors.destroypJS = function(){
+      // @ts-ignore
       cancelAnimationFrame(pJS.fn.drawAnimFrame);
+      // @ts-ignore
       canvas_el.remove();
+      // @ts-ignore
       pJSDom = null;
     };
   
   
+    // @ts-ignore
     pJS.fn.vendors.drawShape = function(c, startX, startY, sideLength, sideCountNumerator, sideCountDenominator){
   
       // By Programming Thomas - https://programmingthomas.wordpress.com/2013/04/03/n-sided-shapes/
@@ -1262,13 +1475,17 @@ var pJS = function(tag_id, params){
   
     };
   
+    // @ts-ignore
     pJS.fn.vendors.exportImg = function(){
+      // @ts-ignore
       window.open(pJS.canvas.el.toDataURL('image/png'), '_blank');
     };
   
   
+    // @ts-ignore
     pJS.fn.vendors.loadImg = function(type){
   
+      // @ts-ignore
       pJS.tmp.img_error = undefined;
   
       if(pJS.particles.shape.image.src != ''){
@@ -1280,10 +1497,13 @@ var pJS = function(tag_id, params){
           xhr.onreadystatechange = function (data) {
             if(xhr.readyState == 4){
               if(xhr.status == 200){
+                // @ts-ignore
                 pJS.tmp.source_svg = data.currentTarget.response;
+                // @ts-ignore
                 pJS.fn.vendors.checkBeforeDraw();
               }else{
                 console.log('Error pJS - Image not found');
+                // @ts-ignore
                 pJS.tmp.img_error = true;
               }
             }
@@ -1294,7 +1514,9 @@ var pJS = function(tag_id, params){
   
           var img = new Image();
           img.addEventListener('load', function(){
+            // @ts-ignore
             pJS.tmp.img_obj = img;
+            // @ts-ignore
             pJS.fn.vendors.checkBeforeDraw();
           });
           img.src = pJS.particles.shape.image.src;
@@ -1303,95 +1525,132 @@ var pJS = function(tag_id, params){
   
       }else{
         console.log('Error pJS - No image.src');
+        // @ts-ignore
         pJS.tmp.img_error = true;
       }
   
     };
   
   
+    // @ts-ignore
     pJS.fn.vendors.draw = function(){
   
       if(pJS.particles.shape.type == 'image'){
   
+        // @ts-ignore
         if(pJS.tmp.img_type == 'svg'){
   
+          // @ts-ignore
           if(pJS.tmp.count_svg >= pJS.particles.number.value){
+            // @ts-ignore
             pJS.fn.particlesDraw();
+            // @ts-ignore
             if(!pJS.particles.move.enable) cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
+            // @ts-ignore
             else pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
           }else{
             //console.log('still loading...');
+            // @ts-ignore
             if(!pJS.tmp.img_error) pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
           }
   
         }else{
   
+          // @ts-ignore
           if(pJS.tmp.img_obj != undefined){
+            // @ts-ignore
             pJS.fn.particlesDraw();
+            // @ts-ignore
             if(!pJS.particles.move.enable) cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
+            // @ts-ignore
             else pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
           }else{
+            // @ts-ignore
             if(!pJS.tmp.img_error) pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
           }
   
         }
   
       }else{
+        // @ts-ignore
         pJS.fn.particlesDraw();
+        // @ts-ignore
         if(!pJS.particles.move.enable) cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
+        // @ts-ignore
         else pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
       }
   
     };
   
   
+    // @ts-ignore
     pJS.fn.vendors.checkBeforeDraw = function(){
   
       // if shape is image
       if(pJS.particles.shape.type == 'image'){
   
+        // @ts-ignore
         if(pJS.tmp.img_type == 'svg' && pJS.tmp.source_svg == undefined){
+          // @ts-ignore
           pJS.tmp.checkAnimFrame = requestAnimFrame(check);
         }else{
           //console.log('images loaded! cancel check');
+          // @ts-ignore
           cancelRequestAnimFrame(pJS.tmp.checkAnimFrame);
+          // @ts-ignore
           if(!pJS.tmp.img_error){
+            // @ts-ignore
             pJS.fn.vendors.init();
+            // @ts-ignore
             pJS.fn.vendors.draw();
           }
           
         }
   
       }else{
+        // @ts-ignore
         pJS.fn.vendors.init();
+        // @ts-ignore
         pJS.fn.vendors.draw();
       }
   
     };
   
   
+    // @ts-ignore
     pJS.fn.vendors.init = function(){
   
       /* init canvas + particles */
+      // @ts-ignore
       pJS.fn.retinaInit();
+      // @ts-ignore
       pJS.fn.canvasInit();
+      // @ts-ignore
       pJS.fn.canvasSize();
+      // @ts-ignore
       pJS.fn.canvasPaint();
+      // @ts-ignore
       pJS.fn.particlesCreate();
+      // @ts-ignore
       pJS.fn.vendors.densityAutoParticles();
   
       /* particles.line_linked - convert hex colors to rgb */
+      // @ts-ignore
       pJS.particles.line_linked.color_rgb_line = hexToRgb(pJS.particles.line_linked.color);
   
     };
   
   
+    // @ts-ignore
     pJS.fn.vendors.start = function(){
   
       if(isInArray('image', pJS.particles.shape.type)){
+        // @ts-ignore
         pJS.tmp.img_type = pJS.particles.shape.image.src.substr(pJS.particles.shape.image.src.length - 3);
+        // @ts-ignore
         pJS.fn.vendors.loadImg(pJS.tmp.img_type);
       }else{
+        // @ts-ignore
         pJS.fn.vendors.checkBeforeDraw();
       }
   
@@ -1403,8 +1662,10 @@ var pJS = function(tag_id, params){
     /* ---------- pJS - start ------------ */
   
   
+    // @ts-ignore
     pJS.fn.vendors.eventsListeners();
   
+    // @ts-ignore
     pJS.fn.vendors.start();
     
   
@@ -1413,6 +1674,7 @@ var pJS = function(tag_id, params){
   
   /* ---------- global functions - vendors ------------ */
   
+  // @ts-ignore
   Object.deepExtend = function(destination, source) {
     for (var property in source) {
       if (source[property] && source[property].constructor &&
@@ -1426,30 +1688,42 @@ var pJS = function(tag_id, params){
     return destination;
   };
   
+  // @ts-ignore
   window.requestAnimFrame = (function(){
     return  window.requestAnimationFrame ||
+      // @ts-ignore
       window.webkitRequestAnimationFrame ||
+      // @ts-ignore
       window.mozRequestAnimationFrame    ||
+      // @ts-ignore
       window.oRequestAnimationFrame      ||
+      // @ts-ignore
       window.msRequestAnimationFrame     ||
       function(callback){
         window.setTimeout(callback, 1000 / 60);
       };
   })();
   
+  // @ts-ignore
   window.cancelRequestAnimFrame = ( function() {
     return window.cancelAnimationFrame         ||
+      // @ts-ignore
       window.webkitCancelRequestAnimationFrame ||
+      // @ts-ignore
       window.mozCancelRequestAnimationFrame    ||
+      // @ts-ignore
       window.oCancelRequestAnimationFrame      ||
+      // @ts-ignore
       window.msCancelRequestAnimationFrame     ||
       clearTimeout
   } )();
   
+  // @ts-ignore
   function hexToRgb(hex){
     // By Tim Down - http://stackoverflow.com/a/5624139/3493650
     // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
     var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    // @ts-ignore
     hex = hex.replace(shorthandRegex, function(m, r, g, b) {
        return r + r + g + g + b + b;
     });
@@ -1461,10 +1735,12 @@ var pJS = function(tag_id, params){
     } : null;
   };
   
+  // @ts-ignore
   function clamp(number, min, max) {
     return Math.min(Math.max(number, min), max);
   };
   
+  // @ts-ignore
   function isInArray(value, array) {
     return array.indexOf(value) > -1;
   }
@@ -1472,8 +1748,10 @@ var pJS = function(tag_id, params){
   
   /* ---------- particles.js functions - start ------------ */
   
+  // @ts-ignore
   window.pJSDom = [];
   
+  // @ts-ignore
   window.particlesJS = function(tag_id, params){
   
     //console.log(params);
@@ -1492,11 +1770,13 @@ var pJS = function(tag_id, params){
     /* pJS elements */
     var pJS_tag = document.getElementById(tag_id),
         pJS_canvas_class = 'particles-js-canvas-el',
+        // @ts-ignore
         exist_canvas = pJS_tag.getElementsByClassName(pJS_canvas_class);
   
     /* remove canvas if exists into the pJS target tag */
     if(exist_canvas.length){
       while(exist_canvas.length > 0){
+        // @ts-ignore
         pJS_tag.removeChild(exist_canvas[0]);
       }
     }
@@ -1510,15 +1790,18 @@ var pJS = function(tag_id, params){
     canvas_el.style.height = "100%";
   
     /* append canvas */
+    // @ts-ignore
     var canvas = document.getElementById(tag_id).appendChild(canvas_el);
   
     /* launch particle.js */
     if(canvas != null){
+      // @ts-ignore
       pJSDom.push(new pJS(tag_id, params));
     }
   
   };
   
+  // @ts-ignore
   window.particlesJS.load = function(tag_id, path_config_json, callback){
   
     /* load json config */
@@ -1527,7 +1810,9 @@ var pJS = function(tag_id, params){
     xhr.onreadystatechange = function (data) {
       if(xhr.readyState == 4){
         if(xhr.status == 200){
+          // @ts-ignore
           var params = JSON.parse(data.currentTarget.response);
+          // @ts-ignore
           window.particlesJS(tag_id, params);
           if(callback) callback();
         }else{
