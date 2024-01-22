@@ -6,7 +6,7 @@
                 <div class="tile is-4 is-flex is-justify-content-center">
                     <div id="about-img" class="h-100 p-3 is-flex is-flex-direction-column is-align-items-center">
                         <!-- svelte-ignore a11y-img-redundant-alt -->
-                        <img src="/images/profile.jpg" alt="Profile Picture" />
+                        <img src="{ base }/images/profile.jpg" alt="Profile Picture" />
                     </div>
                 </div>
                 <div class="tile is-8 is-flex is-flex-direction-column is-justify-content-center">
@@ -31,7 +31,7 @@
                     {#each icons as icon}
                         <div class="column is-flex is-justify-content-center is-flex-direction-column is-align-items-center">
                             <a href={icon.link} target="_blank">
-                                <figure class="image is-128x128"><img src={icon.icon} alt={icon.alt}></figure>
+                                <figure class="image is-128x128"><img src={ base }{icon.icon} alt={icon.alt}></figure>
                             </a>
                         </div>
                     {/each}
@@ -78,6 +78,7 @@
 
 <!-- TypeScript -->
 <script lang="ts">
+    import { base } from "$app/paths";
     
     let icons = [
         {"link": "https://github.com/MFaria27", "icon": "/images/GitHub.png", "alt": "Github"},
