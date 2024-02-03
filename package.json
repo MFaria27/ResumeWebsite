@@ -7,7 +7,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"css-build": "node-sass --omit-source-map-url ./static/scss/bulma.scss ./static/css/bulma.css",
-		"deploy": "npx gh-pages -d docs",
+		"deploy": "npx gh-pages -d build",
 		"prepare": "svelte-kit sync",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
 	},
