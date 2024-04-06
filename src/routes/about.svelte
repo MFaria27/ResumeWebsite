@@ -12,7 +12,7 @@
                 <div class="tile is-8 is-flex is-flex-direction-column is-justify-content-center">
                     <div class="content is-size-5-tablet is-bold is-flex is-flex-direction-column">
                         <p>
-                            Hello! I'm Mattheus Faria, a senior at Worcester Polytechnic Institute majoring in Data Science geared towards Business Intelligence and minoring in Business.
+                            Hello! I'm Mattheus Faria, a graduate of Worcester Polytechnic Institute majored in Data Science geared towards Business Intelligence and minored in Business.
                         </p>
                         <p>
                             I have been studying mostly back-end programming languages throughout my college classes, 
