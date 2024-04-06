@@ -2,7 +2,8 @@ export let IRS_Parser = {
     "Title" : "IRS 990 Web Parser",
     "Thumbnail" :  { "Icon" : "/images/project-thumbnails/parserThumbnail.png", "Alt" : "Parser Thumbnail" },
     "Buttons" : [
-        { "Label" : "Live", "Link" : "parserweb.mattheusfaria.com" }
+        { "Label" : "Live", "Link" : "parserweb.mattheusfaria.com" },
+        { "Label" : "Blank", "Link" : "" }
     ],
     "Description" : "Used the AWS suite and Angular to create a website that looks up colleges through Propublica Nonprofit, adds it to a global database, and allows the user to compile basic information onto an excel file",
     "Code_Used" : [
