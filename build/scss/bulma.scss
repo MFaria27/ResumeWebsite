@@ -1,0 +1,40 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Set default font to Inter.
+$family-inter: "Inter", serif;
+$family-primary: $family-inter;
+
+$tablet: 872px;
+
+// Set default text color to white.
+$text: white;
+$text-strong: white;
+
+$link: white;
+$link-active: white;
+$link-hover: white;
+
+// Change the default border radius.
+$radius: 1rem;
+
+// Custom text input.
+$custom-gray: #666;
+$custom-dark-gray: #333;
+$input-icon-color: $custom-gray;
+$input-icon-active-color: $custom-dark-gray;
+$input-color: $custom-dark-gray;
+$input-placeholder-color: $custom-gray;
+
+$slate: #0c0c0c;
+$slate-invert: findColorInvert($slate);
+$grass-green: #62C370;
+$grass-green-invert: findColorInvert($grass-green);
+
+
+$custom-colors: (
+    "slate": ($slate, $slate-invert),
+    "grass-green": ($grass-green, $grass-green-invert)
+);
+
+@import "../../node_modules/bulma/bulma.sass";
