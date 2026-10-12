@@ -3,7 +3,7 @@ import type { Project } from "./types";
 export let InternshipScrapper: Project = {
     "Title" : "Internship Scrapper",
     "Category" : "Personal",
-    "Year" : "2022",
+    "Year" : "2021",
     "Thumbnail" :  { "Icon" : "/images/project-thumbnails/indeed-logo.webp", "Alt" : "Intern Thumbnail" },
     "Buttons" : [
         { "Label" : "GitHub", "Link" : "https://github.com/MFaria27/InternshipScrapper" },

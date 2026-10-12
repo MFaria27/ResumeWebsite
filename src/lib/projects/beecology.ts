@@ -3,7 +3,7 @@ import type { Project } from "./types";
 export let Beecology: Project = {
     "Title" : "Beecology MQP Project",
     "Category" : "Academic",
-    "Year" : "2023",
+    "Year" : "2024",
     "Thumbnail" :  { "Icon" : "/images/project-thumbnails/mqpThumbnail.webp", "Alt" : "MQP Thumbnail" },
     "Buttons" : [
         { "Label" : "Blank", "Link" : "" },
