@@ -1,75 +1,59 @@
-<svelte:head>
-    <script src="{ base }/particles/particles.js"></script>
-</svelte:head>
+<Seo description="Mattheus Faria, a data scientist. Projects, experience and resume." />
 
 <!-- HTML -->
-<main class="h-100 page">
-    <div id="particles-js"></div>
-    <div class="page-header">
-        <Header />
-    </div>
-    <div class="page-content h-100 {$section == "About" ? 'scroll-about' : ''} {$section == "Projects" ? 'scroll-proj' : ''}">
-        {#if $section == "Index"   } <Name />     {/if}
-        {#if $section == "About"   } <About />    {/if}
-        {#if $section == "Projects"} <Projects /> {/if}
-        {#if $section == "Resume"  } <Resume />   {/if}
+<main class="name-page">
+    <div class="container is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
+        <h1 class="title is-size-2 is-bold has-text-centered">MATTHEUS <span class="has-text-grass-green">D.</span> FARIA</h1>
+        <h2 class="title is-size-3 is-bold">Data Scientist</h2>
+        <div class="socials">
+            {#each socialLinks as link}
+                <a class="social" href={link.href} aria-label={link.label} title={link.label}
+                   target={link.external ? "_blank" : undefined} rel={link.external ? "noopener noreferrer" : undefined}>
+                    <Icon name={link.icon} />
+                </a>
+            {/each}
+        </div>
     </div>
 </main>
 
 <!-- CSS -->
 <style lang="scss">
-    #particles-js {
-        background-color: #0c0c0c;
-        height: 103vh;
-        width: 100%;
-        z-index: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .page {
+    $green: #62C370;
+
+    // Fill the space under the header and center the name, nudged slightly above middle
+    .name-page {
+        flex: 1;
         display: flex;
-        flex-flow: column;
+        align-items: center;
+        padding-bottom: 10vh;
     }
-    .page-header {
-        flex: 0 1 auto;
+    .socials {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
     }
-    .page-content {
-        flex: 1 1 auto;
+    .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        font-size: 1.1rem;
+        transition: 0.3s;
     }
-    .scroll-proj {
-        overflow-y: scroll;
-    }
-    @media (max-width: 872px) {
-        .scroll-about {
-            overflow-y: scroll;
-        }
+    .social:hover {
+        color: $green;
+        border-color: $green;
+        transform: translateY(-2px);
     }
 </style>
 
 <!-- TypeScript -->
 <script lang="ts">
-    import Header from "./header.svelte";
-    import Name from "./name.svelte";
-    import About from "./about.svelte";
-    import Projects from "./projects.svelte";
-    import Resume from "./resume.svelte";
-    import { section } from "../store";
-    import { base } from "$app/paths";
-    import { onMount } from "svelte";
-
-    let particleReady = false;
-    let mounted = false;
-
-    onMount(() => {
-        loadParticle();
-    });
-    
-    function loadParticle(){
-        particlesJS.load('particles-js', base+"/particles/particles.json", function() {
-            console.log('callback - particles-js config loaded');
-        });
-    }
-    
-
+    import Seo from "$lib/components/seo.svelte";
+    import Icon from "$lib/components/icon.svelte";
+    import { socialLinks } from "$lib/site";
 </script>
